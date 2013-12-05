@@ -6,47 +6,27 @@ import java.awt.*;
 
 public class Main {
     public static void main(String[] args){
-        //System.out.println("Pauline's game");
-        
-        javax.swing.SwingUtilities.invokeLater(new Runnable(){
-        	public void run() {
-        		createTheWindow();
-        }
-        });
+        System.out.println("Pauline's game");
+        /* dont add code if you dont know what it does */
+        createTheWindow();
     }
-        
-            private static void createTheWindow(){
-        	JFrame frame = new JFrame ("gameFrame"); //this creates the JFrame
-        	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//what happens when the window is closed
-        	
-        	//create a green menu bar- makes it have a green background
-        	JMenuBar greenMenuBar = new JMenuBar();
-        	greenMenuBar.setOpaque(true);
-        	greenMenuBar.setBackground(new Color(154,165, 127 ));
-        	greenMenuBar.setPreferredSize(new Dimension(200, 20));
-        	
-        	
-        	/*
-        	//create yellow label to put in the content pane
-        	JLabel yellowLabel = new JLabel();
-        	yellowLabel.setOpaque(true);
-        	yellowLabel.setBackground(new Color(248,213,131 ));
-        	yellowLabel.setPreferredSize(new Dimension(200,180));
-        	
-        	//set the menu bar and add the content to the content pane.
-        	*/
-        	
-        	
+ 
+    /* this should be in a seperate class, probably extending JFrame */
+    private static void createTheWindow(){
+        JFrame frame;
+        JPanel panel;
 
-            //display the window
-            frame.pack();	//size the frame
-            frame.setVisible(true); //show it
-        }
-        
-        
-        
- }
-    
+        frame = new JFrame ("gameFrame"); //this creates the JFrame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//what happens when the window is closed
+        panel = new JPanel();
+        panel.setBackground(new Color(255,0,0));
+        panel.setPreferredSize(new Dimension(400,400));
+        frame.getContentPane().add(panel);
+        frame.pack();	//size the frame
+        frame.setVisible(true); //show it
+    }
+}
+
 
 
 
